@@ -25,7 +25,7 @@ namespace template_csharp_album_collections
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            
             services.AddControllers();
 
             //just creating these swagger calls for just in case
