@@ -10,7 +10,9 @@ namespace template_csharp_album_collections
         public DbSet<Album> Albums { get; set; }
 
         public DbSet<Artist> Artists { get; set; }
+        public DbSet<Artist> Albums { get; set; }
         const string CONNECTION_STRING = "Server=(localdb)\\mssqllocaldb; Database=AlbumsDB; Trusted_Connection=True";
+
 
 
 
