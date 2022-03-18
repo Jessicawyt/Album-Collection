@@ -18,6 +18,58 @@ namespace template_csharp_album_collections.Migrations
                 .HasAnnotation("ProductVersion", "5.0.15")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("template_csharp_album_collections.Models.Album", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ArtistId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RecordLabel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArtistId");
+
+                    b.ToTable("Albums");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ArtistId = 1,
+                            Image = "https://m.media-amazon.com/images/I/71FvMBLmheL._SL1200_.jpg",
+                            RecordLabel = "Aftermath",
+                            Title = "DAMN."
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ArtistId = 2,
+                            Image = "https://i.pinimg.com/originals/38/e0/6e/38e06ed03db63c6d75338a5a76b3135b.png",
+                            RecordLabel = "RCA Records",
+                            Title = "Plastic Hearts"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ArtistId = 3,
+                            Image = "https://m.media-amazon.com/images/I/81-blrK5yoL._SL1400_.jpg",
+                            RecordLabel = "XO",
+                            Title = "House of Balloons"
+                        });
+                });
+
             modelBuilder.Entity("template_csharp_album_collections.Models.Artist", b =>
                 {
                     b.Property<int>("Id")
@@ -66,6 +118,22 @@ namespace template_csharp_album_collections.Migrations
                             HeroImage = "/images/theweekend.webp",
                             Name = "The Weekend"
                         });
+                });
+
+            modelBuilder.Entity("template_csharp_album_collections.Models.Album", b =>
+                {
+                    b.HasOne("template_csharp_album_collections.Models.Artist", "Artist")
+                        .WithMany("Albums")
+                        .HasForeignKey("ArtistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Artist");
+                });
+
+            modelBuilder.Entity("template_csharp_album_collections.Models.Artist", b =>
+                {
+                    b.Navigation("Albums");
                 });
 #pragma warning restore 612, 618
         }
