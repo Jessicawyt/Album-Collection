@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(109, 177, 109);
+}
+
+.header{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    padding: 11px;
+    margin: -16px;
+}
+
+.nav1{
+    position: absolute;
+    right: 150px;
+    bottom:870px;
+    color: rgb(245, 245, 245);
+    padding: 1px 25px;
+    font-size: 26px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.nav2{
+    position: absolute;
+    right: 290px;
+    bottom:870px;
+    color: rgb(255, 255, 255);
+    padding: 1px 25px;
+    font-size: 26px;
+    text-align: center;
+    text-decoration: none;
+}

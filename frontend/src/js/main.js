@@ -1,4 +1,19 @@
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+
+
+const footer = document.getElementById('footer');
+const navbar = document.getElementById('navbar');
+
 export default() => {
-    const appDiv = document.getElementById("app");
-    appDiv.innerHTML = `<h1>Hello World!</h1>`;
+    Setup();
+
+}
+
+
+
+function Setup(){
+footer.innerHTML = Footer.SetupFooter();
+navbar.innerHTML = Header.SetupNavBar()
+Header.SetupEventListeners();
 }
