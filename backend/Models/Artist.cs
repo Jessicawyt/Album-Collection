@@ -1,4 +1,6 @@
-﻿namespace template_csharp_album_collections.Models
+﻿using System.Collections.Generic;
+
+namespace template_csharp_album_collections.Models
 {
     public class Artist
     {
@@ -7,6 +9,6 @@
         public string Genre { get; set; }
         public string Bio { get; set; }
         public string HeroImage { get; set; }
-        //public virtual List<Albums> Albums; //Albums will have relationship to Songs
-    }
+        public virtual List<Album> Albums { get; set; }
+}
 }
