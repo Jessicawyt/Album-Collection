@@ -10,7 +10,6 @@ namespace template_csharp_album_collections
         public DbSet<Album> Albums { get; set; }
 
         public DbSet<Artist> Artists { get; set; }
-        public DbSet<Artist> Albums { get; set; }
         const string CONNECTION_STRING = "Server=(localdb)\\mssqllocaldb; Database=AlbumsDB; Trusted_Connection=True";
 
 
@@ -18,9 +17,7 @@ namespace template_csharp_album_collections
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(CONNECTION_STRING);
-
-            optionsBuilder.UseLazyLoadingProxies();
+            optionsBuilder.UseSqlServer(CONNECTION_STRING).UseLazyLoadingProxies();
 
         }
 
@@ -74,7 +71,7 @@ namespace template_csharp_album_collections
             modelBuilder.Entity<Album>().HasData(
                 new Album()
                 {
-                    Id = 1,
+                    Id = 3,
                     Title = "House of Balloons",
                     Image = "https://m.media-amazon.com/images/I/81-blrK5yoL._SL1400_.jpg",
                     ArtistId = 3,
