@@ -1,6 +1,6 @@
+import { GetArtists } from "./ArtistIndex";
 
 const contentDiv = document.getElementById("app");
-
 
 export default {
     SetupNavBar,
@@ -24,9 +24,9 @@ function SetupEventListeners(){
     let navArtist = document.getElementById('navArtist');
     let navAlbums = document.getElementById('navAlbums');
     navAlbums.addEventListener('click', function(){
-        contentDiv.innerHTML = 'h';
+        //contentDiv.innerHTML = 'h';
     });
-    navArtist.addEventListener('click', function(){
-        contentDiv.innerHTML = 'c';
+    navArtist.addEventListener('click', function(){   
+        GetArtists();
     });
 }

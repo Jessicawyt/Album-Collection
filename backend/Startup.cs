@@ -66,6 +66,8 @@ namespace template_csharp_album_collections
 
             app.UseRouting();
 
+            app.UseCors("AllowAll");
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
