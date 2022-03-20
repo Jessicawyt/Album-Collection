@@ -12,8 +12,8 @@ namespace template_csharp_album_collections.Models
         public int ArtistId { get; set; }
         public virtual Artist Artist { get; set; }
         
-        //public virtual IEnumerable<Song> Songs { get; set; }
-        //public virtual IEnumerable<Review> Reviews { get; set; }
+        public virtual IEnumerable<Song> Songs { get; set; }
+        public virtual IEnumerable<Review> Reviews { get; set; }
 
 
     }
