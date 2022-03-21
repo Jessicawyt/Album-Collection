@@ -44,5 +44,28 @@ namespace template_csharp_album_collections.Controllers
                 return false;
             }
         }
+
+        [HttpPut]
+        public bool Put(Artist artist)
+        {
+            try
+            {
+                _context.Update(artist);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        [HttpDelete]
+        public void Delete(int id)
+        {
+            var artistToDelete = _context.Artists.Find(id);
+            _context.Artists.Remove(artistToDelete);
+            _context.SaveChanges();
+        }
     }
 }
