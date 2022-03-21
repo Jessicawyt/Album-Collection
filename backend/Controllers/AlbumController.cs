@@ -6,7 +6,7 @@ using template_csharp_album_collections.Models;
 
 namespace template_csharp_album_collections.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class AlbumController : ControllerBase
     {
@@ -18,9 +18,9 @@ namespace template_csharp_album_collections.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Album> Get()
+        public IEnumerable<Review> Get()
         {
-            return _context.Albums.ToList();
+            return _context.Reviews.ToList();
 
         }
 

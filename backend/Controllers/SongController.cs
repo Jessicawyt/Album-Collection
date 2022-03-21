@@ -1,60 +1,59 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using template_csharp_album_collections.Models;
-using System;
 
 namespace template_csharp_album_collections.Controllers
 {
-    [ApiController]
     [Route("[controller]")]
-    public class ArtistController : Controller
+    [ApiController]
+    public class SongController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
-        public ArtistController(ApplicationDbContext context)
+        public SongController(ApplicationDbContext context)
         {
-            _context = context;
+            _context = context; 
         }
 
         [HttpGet]
-        public IEnumerable<Artist> Get()
+        public IEnumerable<Song> Get()
         {
-            return _context.Artists.ToList();
+            return _context.Songs.ToList();
         }
 
         [HttpGet("{id}")]
-        public Artist Get(int id)
+        public Song Get(int id)
         {
-            return _context.Artists.Find(id);
+            return _context.Songs.Find(id);
         }
 
         [HttpPost]
-        public bool Post(Artist artist)
+        public bool Post(Song song)
         {
             try
             {
-                _context.Artists.Add(artist);
+                _context.Songs.Add(song);
                 _context.SaveChanges();
                 return true;
             }
-            catch (Exception e)
+            catch (System.Exception)
             {
-                //error handling
                 return false;
             }
         }
 
         [HttpPut]
-        public bool Put(Artist artist)
+        public bool Put(Song song)
         {
             try
             {
-                _context.Update(artist);
-                _context.SaveChanges();
+                _context.Songs.Update(song);
+                _context.SaveChanges(true);
                 return true;
             }
-            catch (Exception e)
+            catch (System.Exception)
             {
                 return false;
             }
@@ -63,8 +62,8 @@ namespace template_csharp_album_collections.Controllers
         [HttpDelete]
         public void Delete(int id)
         {
-            var artistToDelete = _context.Artists.Find(id);
-            _context.Artists.Remove(artistToDelete);
+            var songToDelete = _context.Songs.Find(id);
+            _context.Songs.Remove(songToDelete);
             _context.SaveChanges();
         }
     }

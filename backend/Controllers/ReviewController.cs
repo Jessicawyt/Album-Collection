@@ -1,40 +1,38 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using template_csharp_album_collections.Models;
-using System;
 
 namespace template_csharp_album_collections.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class ArtistController : Controller
+    public class ReviewController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ArtistController(ApplicationDbContext context)
+        public ReviewController(ApplicationDbContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public IEnumerable<Artist> Get()
+        public IEnumerable<Review> Get()
         {
-            return _context.Artists.ToList();
+            return _context.Reviews.ToList();
         }
 
         [HttpGet("{id}")]
-        public Artist Get(int id)
+        public Review Get(int id)
         {
-            return _context.Artists.Find(id);
+            return _context.Reviews.Find(id);
         }
 
         [HttpPost]
-        public bool Post(Artist artist)
+        public bool Post(Review review)
         {
             try
             {
-                _context.Artists.Add(artist);
+                _context.Reviews.Add(review);
                 _context.SaveChanges();
                 return true;
             }
