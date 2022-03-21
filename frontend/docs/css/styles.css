@@ -10,7 +10,7 @@ body {
 }
 
 .nav1{
-    position: absolute;
+    
     right: 150px;
     bottom:870px;
     color: rgb(245, 245, 245);
@@ -21,7 +21,7 @@ body {
 }
 
 .nav2{
-    position: absolute;
+   
     right: 290px;
     bottom:870px;
     color: rgb(255, 255, 255);

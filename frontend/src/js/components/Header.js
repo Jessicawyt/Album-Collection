@@ -1,4 +1,5 @@
 import { GetArtists } from "./ArtistIndex";
+import Album from "./AlbumIndex";
 
 const contentDiv = document.getElementById("app");
 
@@ -24,9 +25,10 @@ function SetupEventListeners(){
     let navArtist = document.getElementById('navArtist');
     let navAlbums = document.getElementById('navAlbums');
     navAlbums.addEventListener('click', function(){
-        //contentDiv.innerHTML = 'h';
+        Album.GetAlbums();      
     });
     navArtist.addEventListener('click', function(){   
         GetArtists();
+        
     });
 }
