@@ -51,8 +51,28 @@ namespace template_csharp_album_collections.Controllers
 
         }
 
+        [HttpPut]
+        public Album Put(Album album)
+        {
+            try
+            {
+                _context.Update(album);
+                _context.SaveChanges();
+                return album;
+            }
+            catch (Exception)
+            {
+                return new Album();
+            }
+        }
 
-
+        [HttpDelete]
+        public void Delete(int id)
+        {
+            var albumToDelete = _context.Albums.Find(id);
+            _context.Albums.Remove(albumToDelete);
+            _context.SaveChanges();
+        }
 
     }
 }
