@@ -59,12 +59,18 @@ namespace template_csharp_album_collections.Controllers
             }
         }
 
-        [HttpDelete]
-        public void Delete(int id)
+        [HttpDelete("{id}")]
+        public IEnumerable<Song> Delete(int id)
         {
+        
             var songToDelete = _context.Songs.Find(id);
             _context.Songs.Remove(songToDelete);
             _context.SaveChanges();
+            return _context.Songs.ToList();
+
+    
+ 
+
         }
     }
 }
