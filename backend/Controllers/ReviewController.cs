@@ -6,6 +6,8 @@ using template_csharp_album_collections.Models;
 
 namespace template_csharp_album_collections.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class ReviewController : Controller
     {
         private readonly ApplicationDbContext _context;
