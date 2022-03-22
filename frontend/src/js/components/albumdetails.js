@@ -1,13 +1,13 @@
 const contentDiv = document.getElementById("app");
 import requestHandler from "../../requestHandler";
-import { AlbumAPIURL } from "./constant";
+import { ALBUM_CONTROLLER } from "../constants";
 
 export default{
     GetAlbum,
 }
 
 function GetAlbum(id){
-    requestHandler.allRequest(AlbumAPIURL + id, Process);
+    requestHandler.allRequest(ALBUM_CONTROLLER + id, Process);
     addEventListeners();
     // fetch(AlbumAPIURL + id)//need to reference ALBUM_CONTROLLER after we pushed SONG/REVIEW
     // .then(response => response.json())
@@ -50,7 +50,7 @@ function addEventListeners(){
     let editButtons = Array.from(document.getElementsByClassName('editButton'));
     editButtons.forEach(button => {
         button.addEventListener('click', function(){
-            requestHandler.allRequest(AlbumAPIURL + this.id, data => {
+            requestHandler.allRequest(ALBUM_CONTROLLER + this.id, data => {
                 Edit(data);
                 addEventListeners();
             })

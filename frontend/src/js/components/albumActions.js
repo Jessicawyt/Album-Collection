@@ -1,6 +1,6 @@
 import requestHandler from "../../requestHandler";
 const contentDiv = document.getElementById("app");
-import { AlbumAPIURL } from "./constant";
+import { ALBUM_CONTROLLER } from "../constants";
 
 import GetAlbum from "./albumdetails";
 
@@ -9,7 +9,7 @@ export default{
 }
 
 function GetAlbums(){
-    requestHandler.allRequest(AlbumAPIURL, Process)
+    requestHandler.allRequest(ALBUM_CONTROLLER, Process)
     addEventListeners();
     // fetch("https://localhost:44368/api/album")//need to reference ALBUM_CONTROLLER after we pushed SONG/REVIEW
     // .then(response => response.json())
@@ -18,17 +18,18 @@ function GetAlbums(){
 }
 
 function DeleteAlbum(id){
-    requestHandler.allRequest(AlbumAPIURL + id, Process(data), "DELETE");
+    requestHandler.allRequest(ALBUM_CONTROLLER + id, Process, "DELETE");
     addEventListeners();
 }
 
-function Process(data){
+function Process(albums){
+    console.log(albums);
     contentDiv.innerHTML = `
         <button id="createAlbum">Add Album</button>
         <ul>
-            ${data.map(d => {
+            ${albums.map(album => {
                 return `
-                <li id=${d.id} class="album">${d.title} <button class="deleteAlbum">Delete</button></li>
+                <li id=${album.id} class="album">${album.title} <button class="deleteAlbum">Delete</button></li>
                 `
             }).join('')}
         </ul>

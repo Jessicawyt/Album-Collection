@@ -9,8 +9,8 @@ using template_csharp_album_collections;
 namespace template_csharp_album_collections.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220321191435_seedDataStuff")]
-    partial class seedDataStuff
+    [Migration("20220322204349_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

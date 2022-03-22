@@ -19,9 +19,9 @@ namespace template_csharp_album_collections.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Review> Get()
+        public IEnumerable<Album> Get()
         {
-            return _context.Reviews.ToList();
+            return _context.Albums.ToList();
 
         }
 
