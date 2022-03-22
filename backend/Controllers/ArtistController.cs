@@ -38,6 +38,7 @@ namespace template_csharp_album_collections.Controllers
                 _context.SaveChanges();
                 return true;
             }
+
             catch (Exception e)
             {
                 //error handling
