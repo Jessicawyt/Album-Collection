@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using template_csharp_album_collections.Models;
 
 namespace template_csharp_album_collections.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class AlbumController : ControllerBase
     {
@@ -18,13 +19,60 @@ namespace template_csharp_album_collections.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Album> Get()
+        public IEnumerable<Review> Get()
         {
-            return _context.Albums.ToList();
+            return _context.Reviews.ToList();
 
         }
 
 
+        [HttpGet("{id}")]
+        public Album Get(int id)
+        {
+            return _context.Albums.Find(id);
+        }
 
+
+        [HttpPost]
+        public Album Post(Album album)
+        {
+            try
+            {
+                _context.Albums.Add(album);
+                _context.SaveChanges();
+
+                return album;
+            }
+            catch (Exception)
+            {
+             
+              return new Album();
+            }
+
+        }
+
+        [HttpPut]
+        public Album Put(Album album)
+        {
+            try
+            {
+                _context.Update(album);
+                _context.SaveChanges();
+                return album;
+            }
+            catch (Exception)
+            {
+                return new Album();
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IEnumerable<Album> Delete(int id)
+        {
+            var albumToDelete = _context.Albums.Find(id);
+            _context.Albums.Remove(albumToDelete);
+            _context.SaveChanges();
+            return _context.Albums.ToList();
+        }
     }
 }
