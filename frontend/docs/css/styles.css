@@ -10,9 +10,7 @@ body {
 }
 
 .nav1{
-    position: absolute;
-    right: 150px;
-    bottom:870px;
+  display: flex;
     color: rgb(245, 245, 245);
     padding: 1px 25px;
     font-size: 26px;
@@ -21,9 +19,7 @@ body {
 }
 
 .nav2{
-    position: absolute;
-    right: 290px;
-    bottom:870px;
+    display: flex;
     color: rgb(255, 255, 255);
     padding: 1px 25px;
     font-size: 26px;
