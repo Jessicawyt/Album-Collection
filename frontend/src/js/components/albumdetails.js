@@ -28,7 +28,9 @@ function Edit(Album){
     <section>
     <label>Title</label>
       <input id="EditTitle" value="${Album.title}" />
-      <input id="EditrecordLabel" value="${Album.recordLabel}"
+
+      <label>Record Label</label>
+      <input id="EditrecordLabel" value="${Album.recordLabel}"/>
 
     </section>
     <button id="${Album.id}" class="UpdateButton" >Update</button>

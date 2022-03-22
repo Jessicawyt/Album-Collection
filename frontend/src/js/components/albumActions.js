@@ -38,10 +38,59 @@ function Process(albums){
     addEventListeners();
 }
 
+function CreateAlbum(){
+    console.log("works");
+    contentDiv.innerHTML = `
+
+    <h2>Create Album</h2>
+
+
+
+    <section>
+    <label>Title</label>
+
+    <label>Title</label>
+    <input id="CreateTitle"  />
+
+    <label>Artist</label>
+    <input id="CreateArtistId" />
+
+    <label>Image of Artist</label>
+    <input  id="CreateImage" />
+
+    <label>Record Label</label>
+    <input id="CreaterecordLabel" />
+
+    </section>
+    <button id="CreateButton" class="CreateButton" >Add Album</button>
+    `;
+    let CreateButton = document.getElementById("CreateButton");
+
+    CreateButton.addEventListener('click', function(){
+
+       let CreateAlbum = {
+         Image: document.getElementById("CreateImage").value,
+         ArtistId: document.getElementById("CreateArtistId").value,
+         Title: document.getElementById("CreateTitle").value,
+         RecordLabel: document.getElementById("CreaterecordLabel").value
+       }
+
+       requestHandler.allRequest(ALBUM_CONTROLLER, Process, "POST", CreateAlbum);
+
+    })
+
+
+
+}
+
 function addEventListeners(){
     
     let albumItems = Array.from(document.getElementsByClassName("album"));
     console.log(albumItems);
+
+     let createAlbum = document.getElementById("createAlbum");    
+
+     createAlbum.addEventListener('click',CreateAlbum)
     
     albumItems.forEach(albumItem => {
         console.log('iterating albumItems',albumItem);
