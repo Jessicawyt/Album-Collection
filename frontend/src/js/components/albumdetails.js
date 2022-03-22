@@ -1,21 +1,26 @@
 const contentDiv = document.getElementById("app");
+import allRequest from "../../requestHandler";
+import { AlbumAPIURL } from "./constant";
 
-
-export default {
-    GetAlbum
+export default{
+    GetAlbum,
 }
 
-function GetAlbum(){
-    fetch(CONSTANTS.AlbumAPIURL)
-    .then(response => response.json())
-    .then(data => {
-        contentDiv.innerHTML = Process(data);
-    })
-    .catch(err => console.log(err));
+function GetAlbum(id){
+    allRequest(AlbumAPIURL + id, Process);
+    addEventListeners();
+    // fetch(AlbumAPIURL + id)//need to reference ALBUM_CONTROLLER after we pushed SONG/REVIEW
+    // .then(response => response.json())
+    // .then(data => process(data))
+    // .catch(err => console.log(err))   
+}
+
+function Edit(data){
+
 }
 
 function Process(Album){
-    return `
+    contentDiv.innerHTML = `
         <ol>
             ${Album.map(album =>{
                 return `
@@ -25,6 +30,7 @@ function Process(Album){
                             <li>Artist: ${Album.Artist.Name}</li>
                             <li>Description: ${Album.RecordLabel}</li>
                             <li>Image: ${Album.Image}</li>
+                            <li><button id=${Album.id} class="editButton></button></li>
                         </ul>
                     </li>
                 `;
@@ -33,3 +39,14 @@ function Process(Album){
     `;
 }
 
+function addEventListeners(){
+    let editButtons = Array.from(document.getElementsByClassName('editButton'));
+    editButtons.forEach(button => {
+        button.addEventListener('click', function(){
+            allRequest(AlbumAPIURL + this.id, data => {
+                Edit(data);
+                addEventListeners();
+            })
+        });
+    });
+}
