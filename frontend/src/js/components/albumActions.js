@@ -1,16 +1,15 @@
-import {allRequest} from "../../requestHandler";
+import requestHandler from "../../requestHandler";
 const contentDiv = document.getElementById("app");
 import { AlbumAPIURL } from "./constant";
 
 import GetAlbum from "./albumdetails";
 
 export default{
-    GetAlbums,
-    GetAlbum
+    GetAlbums
 }
 
 function GetAlbums(){
-    allRequest(AlbumAPIURL, Process)
+    requestHandler.allRequest(AlbumAPIURL, Process)
     addEventListeners();
     // fetch("https://localhost:44368/api/album")//need to reference ALBUM_CONTROLLER after we pushed SONG/REVIEW
     // .then(response => response.json())
@@ -19,7 +18,7 @@ function GetAlbums(){
 }
 
 function DeleteAlbum(id){
-    allRequest(AlbumAPIURL + id, Process(data), "DELETE");
+    requestHandler.allRequest(AlbumAPIURL + id, Process(data), "DELETE");
     addEventListeners();
 }
 
