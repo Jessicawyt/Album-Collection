@@ -59,19 +59,15 @@ function Process(album){
     console.log(album);
     contentDiv.innerHTML = `
         <ol>
-            ${album.map(albumDetails =>{
-                return `
-                    <li>
-                        ${albumDetails.title}
-                        <ul>
-                            <li>Artist: ${albumDetails.artist.name}</li>
-                            <li>Description: ${albumDetails.recordLabel}</li>
-                            <li>Image: ${albumDetails.image}</li>
-                            <li><button id=${albumDetails.id} class="editButton></button></li>
-                        </ul>
-                    </li>
-                `;
-            }).join('')}
+            <li>
+                ${album.title}
+                <ul>
+                    <li>Artist: ${album.artist.name}</li>
+                    <li>Description: ${album.recordLabel}</li>
+                    <li>Image: ${album.image}</li>
+                    <li><button id=${album.id} class="editButton></button></li>
+                </ul>
+            </li>
         </ol>
     `;
 }
