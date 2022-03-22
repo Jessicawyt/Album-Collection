@@ -2,7 +2,7 @@ import requestHandler from "../../requestHandler";
 const contentDiv = document.getElementById("app");
 import { ALBUM_CONTROLLER } from "../constants";
 
-import GetAlbum from "./albumdetails";
+import albumdetails from "./albumdetails";
 
 export default{
     GetAlbums
@@ -37,10 +37,12 @@ function Process(albums){
 }
 
 function addEventListeners(){
+
     let albumItems = Array.from(document.getElementsByClassName("album"));
-    albumItems.forEach(album => {
-        album.addEventListener('click', GetAlbum(album.id));
-        let deleteButton = album.getElementsByClassName('deleteAlbum')[0];
-        deleteButton.addEventListener('click', DeleteAlbum(album.id));
+    albumItems.forEach(albumItem => {
+        console.log(albumItem);
+        albumItem.addEventListener('click', albumdetails.GetAlbum(albumItem.id));
+        let deleteButton = albumItem.getElementsByClassName('deleteAlbum')[0];
+        deleteButton.addEventListener('click', DeleteAlbum(albumItem.id));
     });
 }
