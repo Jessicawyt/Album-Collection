@@ -70,14 +70,15 @@ function SetupEventListeners(){
 function AddArtist(){
     
     appDiv.innerHTML = `
-        
-        <input type="text" id="artistName" placeholder="Name">
-        <input type="text" id="artistGenre" placeholder="Genre">
-        <input type="text" id="artistBio" placeholder="Bio">
-        <input type="text" id="artistImage" placeholder="Image">
+        <h2>Add Artist</h2>
+        <section class="form">
+            <input type="text" id="artistName" placeholder="Name">
+            <input type="text" id="artistGenre" placeholder="Genre">
+            <input type="text" id="artistBio" placeholder="Bio">
+            <input type="text" id="artistImage" placeholder="Image Url">
 
-        <button id="saveArtistBtn" type="submit">Save</button>
-
+            <button id="saveArtistBtn" type="submit">Save</button>
+        </section>
     `;
    
 

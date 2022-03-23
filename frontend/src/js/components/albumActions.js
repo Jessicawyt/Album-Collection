@@ -44,23 +44,11 @@ function CreateAlbum(){
 
     <h2>Create Album</h2>
 
-
-
-    <section>
-    <label>Title</label>
-
-    <label>Title</label>
-    <input id="CreateTitle"  />
-
-    <label>Artist</label>
-    <input id="CreateArtistId" />
-
-    <label>Image of Artist</label>
-    <input  id="CreateImage" />
-
-    <label>Record Label</label>
-    <input id="CreaterecordLabel" />
-
+    <section class="form">
+        <input id="CreateTitle" placeholder="Title" />
+        <input id="CreateArtistId" placeholder="Artist Id" />
+        <input id="CreateImage" placeholder="ImageUrl" />
+        <input id="CreaterecordLabel" placeholder="Record Label" />
     </section>
     <button id="CreateButton" class="CreateButton" >Add Album</button>
     `;

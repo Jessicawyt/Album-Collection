@@ -48,15 +48,16 @@ function AddEventListeners(artist){
 
 function RenderUpdateArtistView(artist){
     appDiv.innerHTML = `
-        
-        <input type="hidden" value="${artist.id}" id="updateArtistId" />
-        <input type="text" id="artistName" value="${artist.name}">
-        <input type="text" id="artistGenre" value="${artist.genre}">
-        <input type="text" id="artistBio" value="${artist.bio}">
-        <input type="text" id="artistImage" value="${artist.image}">
+        <h2>Edit Artist</h2>
+        <section class="form">
+            <input type="hidden" value="${artist.id}" id="updateArtistId" />
+            <input type="text" placeholder="Name" id="artistName" value="${artist.name}">
+            <input type="text" placeholder="Genre" id="artistGenre" value="${artist.genre}">
+            <input type="text" placeholder="artistBio" id="artistBio" value="${artist.bio}">
+            <input type="text" placeholder="Image Url" id="artistImage" value="${artist.image}">
 
-        <button id="saveUpdateArtistBtn">Save</button>
-    
+            <button id="saveUpdateArtistBtn">Save</button>
+        </section>
     `;
 
     let saveUpdateArtistBtn = document.getElementById('saveUpdateArtistBtn');

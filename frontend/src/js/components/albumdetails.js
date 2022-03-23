@@ -23,17 +23,14 @@ function Edit(Album){
     <h2>Album Detail </h2>
     <input type="hidden" value="${Album.id}" id="EditId" />
     <input type="hidden" value="${Album.artistId}" id="EditArtistId" />
-    <input type="hidden" value="${Album.image}" id="EditImage" />
 
-    <section>
-    <label>Title</label>
-      <input id="EditTitle" value="${Album.title}" />
-
-      <label>Record Label</label>
-      <input id="EditRecordLabel" value="${Album.recordLabel}"/>
-
+    <section class="form">
+        <input id="EditTitle" placeholder="Title" value="${Album.title}" />
+        <input value="${Album.image}" placeholder="ImageUrl" id="EditImage" />
+        <input id="EditRecordLabel" placeholder="Record Label" value="${Album.recordLabel}"/>
+        <button id="${Album.id}" class="UpdateButton" >Update</button>
     </section>
-    <button id="${Album.id}" class="UpdateButton" >Update</button>
+    
     `;
     //addEventListeners();
     let UpdateButton = document.getElementsByClassName("UpdateButton")[0];
