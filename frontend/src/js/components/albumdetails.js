@@ -9,7 +9,7 @@ export default{
 function GetAlbum(id){
     console.log('test',id);
     requestHandler.allRequest(ALBUM_CONTROLLER + id, Process);
-    addEventListeners();
+    
     // fetch(AlbumAPIURL + id)//need to reference ALBUM_CONTROLLER after we pushed SONG/REVIEW
     // .then(response => response.json())
     // .then(data => process(data))
@@ -30,11 +30,12 @@ function Edit(Album){
       <input id="EditTitle" value="${Album.title}" />
 
       <label>Record Label</label>
-      <input id="EditrecordLabel" value="${Album.recordLabel}"/>
+      <input id="EditRecordLabel" value="${Album.recordLabel}"/>
 
     </section>
     <button id="${Album.id}" class="UpdateButton" >Update</button>
     `;
+    //addEventListeners();
     let UpdateButton = document.getElementsByClassName("UpdateButton")[0];
 
     UpdateButton.addEventListener('click', function(){
@@ -44,7 +45,7 @@ function Edit(Album){
          Image: document.getElementById("EditImage").value,
          ArtistId: document.getElementById("EditArtistId").value,
          Title: document.getElementById("EditTitle").value,
-         RecordLabel: document.getElementById("EditrecordLabel").value
+         RecordLabel: document.getElementById("EditRecordLabel").value
        }
 
        requestHandler.allRequest(ALBUM_CONTROLLER, Process, "PUT", EditAlbum);
@@ -60,28 +61,24 @@ function Edit(Album){
 function Process(album){
     console.log(album);
     contentDiv.innerHTML = `
-        <ol>
-            <li>
-                ${album.title}
-                <ul>
-                    <li>Artist: ${album.artist.name}</li>
-                    <li>Description: ${album.recordLabel}</li>
-                    <li>Image: ${album.image}</li>
-                    <li><button id=${album.id} class="editButton></button></li>
-                </ul>
-            </li>
-        </ol>
+        ${album.title}
+        <ul>
+            <li>Artist: ${album.artist.name}</li>
+            <li>Description: ${album.recordLabel}</li>
+            <li>Image: ${album.image}</li>
+            
+        </ul>
+        <button id=${album.id} class="editButton">Edit</button>
     `;
+    addEventListeners();
 }
 
 function addEventListeners(){
-    let editButtons = Array.from(document.getElementsByClassName('editButton'));
-    editButtons.forEach(button => {
-        button.addEventListener('click', function(){
-            requestHandler.allRequest(ALBUM_CONTROLLER + this.id, data => {
-                Edit(data);
-                addEventListeners();
-            })
-        });
+    let editButton = document.getElementsByClassName('editButton')[0];
+    editButton.addEventListener('click', function(){
+        requestHandler.allRequest(ALBUM_CONTROLLER + this.id, data => {
+            Edit(data);
+            
+        })
     });
 }
