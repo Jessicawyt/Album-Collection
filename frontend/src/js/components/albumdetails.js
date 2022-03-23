@@ -1,35 +1,84 @@
 const contentDiv = document.getElementById("app");
+import requestHandler from "../../requestHandler";
+import { ALBUM_CONTROLLER } from "../constants";
 
-
-export default {
-    GetAlbum
+export default{
+    GetAlbum,
 }
 
-function GetAlbum(){
-    fetch(CONSTANTS.AlbumAPIURL)
-    .then(response => response.json())
-    .then(data => {
-        contentDiv.innerHTML = Process(data);
-    })
-    .catch(err => console.log(err));
+function GetAlbum(id){
+    console.log('test',id);
+    requestHandler.allRequest(ALBUM_CONTROLLER + id, Process);
+    
+    // fetch(AlbumAPIURL + id)//need to reference ALBUM_CONTROLLER after we pushed SONG/REVIEW
+    // .then(response => response.json())
+    // .then(data => process(data))
+    // .catch(err => console.log(err))   
 }
 
-function Process(Album){
-    return `
-        <ol>
-            ${Album.map(album =>{
-                return `
-                    <li>
-                        ${Album.title}
-                        <ul>
-                            <li>Artist: ${Album.Artist.Name}</li>
-                            <li>Description: ${Album.RecordLabel}</li>
-                            <li>Image: ${Album.Image}</li>
-                        </ul>
-                    </li>
-                `;
-            }).join('')}
-        </ol>
+function Edit(Album){
+    console.log("works");
+    contentDiv.innerHTML = `
+
+    <h2>Album Detail </h2>
+    <input type="hidden" value="${Album.id}" id="EditId" />
+    <input type="hidden" value="${Album.artistId}" id="EditArtistId" />
+    <input type="hidden" value="${Album.image}" id="EditImage" />
+
+    <section>
+    <label>Title</label>
+      <input id="EditTitle" value="${Album.title}" />
+
+      <label>Record Label</label>
+      <input id="EditRecordLabel" value="${Album.recordLabel}"/>
+
+    </section>
+    <button id="${Album.id}" class="UpdateButton" >Update</button>
     `;
+    //addEventListeners();
+    let UpdateButton = document.getElementsByClassName("UpdateButton")[0];
+
+    UpdateButton.addEventListener('click', function(){
+
+       let EditAlbum = {
+         Id: document.getElementById("EditId").value,
+         Image: document.getElementById("EditImage").value,
+         ArtistId: document.getElementById("EditArtistId").value,
+         Title: document.getElementById("EditTitle").value,
+         RecordLabel: document.getElementById("EditRecordLabel").value
+       }
+
+       requestHandler.allRequest(ALBUM_CONTROLLER, Process, "PUT", EditAlbum);
+
+    })
+
+  
+
 }
 
+
+
+function Process(album){
+    console.log(album);
+    contentDiv.innerHTML = `
+        ${album.title}
+        <ul>
+            <li>Artist: ${album.artist.name}</li>
+            <li>Description: ${album.recordLabel}</li>
+            <li>Image: ${album.image}</li>
+            
+        </ul>
+        <button id=${album.id} class="editButton">Edit</button>
+    `;
+    addEventListeners();
+}
+
+function addEventListeners(){
+    let editButton = document.getElementsByClassName('editButton')[0];
+    editButton.addEventListener('click', function(){
+        requestHandler.allRequest(ALBUM_CONTROLLER + this.id, data => {
+            Edit(data);
+            
+        })
+    });
+}
