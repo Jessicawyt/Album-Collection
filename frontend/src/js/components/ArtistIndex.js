@@ -19,33 +19,47 @@ function Index(artists){
     appDiv.innerHTML = `
         <button id="AddArtistBtn">Add an Artist</button>
 
-        <ul>
+        <div>
             ${artists.map(artist =>{
                 return `
-                    <ul id="${artist.id}" class="singleArtist">
-                        <li>${artist.name}</li>
-                        <img src="${artist.heroImage}">
-                    </ul>
+                    <section id="${artist.id}" class="singleArtist">
+                        <ul class="artistItem">
+                            <li>${artist.name}</li>
+                            <img src="${artist.heroImage}">
+                        </ul>
+                        <button class="DeleteArtistBtn">Delete Artist</button>
+                        
+                    </section>
+                    
                 `;
             }).join('')}
-        </ul>
+        </div>
     `;
     SetupEventListeners();
 }
 
 function SetupEventListeners(){
     let artists = document.getElementsByClassName('singleArtist');
+    
 
     Array.from(artists).forEach(artist => {
-        artist.addEventListener('click',function(){
+        let artistItem = artist.getElementsByClassName('artistItem')[0];
+        artistItem.addEventListener('click',function(){
+
             console.log("clicked");
             
             let artistId = artist.id;
             Artist.GetArtist(artistId);
-
+            
+            let deleteArtistBtn = artist.getElementsByClassName('DeleteArtistBtn')[0];
+            deleteArtistBtn.addEventListener('click',function(){
+               AllRequest.allRequest(ARTIST_CONTROLLER + artistId,Index,"DELETE");
+               console.log('delete');
+            });
             console.log(artistId);
 
         });
+     
     });  
 
     let addArtistBtn = document.getElementById('AddArtistBtn');
@@ -53,6 +67,7 @@ function SetupEventListeners(){
     addArtistBtn.addEventListener('click',function(){
         AddArtist();
     });
+    
     
 }
 
@@ -96,3 +111,4 @@ function AddArtist(){
     });
 }
  
+
