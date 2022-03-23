@@ -27,10 +27,9 @@ function Index(artists){
                             <li>${artist.name}</li>
                             <img src="${artist.heroImage}">
                         </ul>
-                        <button class="DeleteArtistBtn">Delete Artist</button>
+                        <button class="deleteArtistBtn">Delete Artist</button>
                         
                     </section>
-                    
                 `;
             }).join('')}
         </div>
@@ -40,26 +39,21 @@ function Index(artists){
 
 function SetupEventListeners(){
     let artists = document.getElementsByClassName('singleArtist');
-    
 
     Array.from(artists).forEach(artist => {
         let artistItem = artist.getElementsByClassName('artistItem')[0];
-        artistItem.addEventListener('click',function(){
+        let deleteArtistBtn = artist.getElementsByClassName('deleteArtistBtn')[0];
+        let artistId = artist.id;
 
-            console.log("clicked");
-            
-            let artistId = artist.id;
+        artistItem.addEventListener('click',function(){            
             Artist.GetArtist(artistId);
-            
-            let deleteArtistBtn = artist.getElementsByClassName('DeleteArtistBtn')[0];
-            deleteArtistBtn.addEventListener('click',function(){
-               AllRequest.allRequest(ARTIST_CONTROLLER + artistId,Index,"DELETE");
-               console.log('delete');
-            });
             console.log(artistId);
-
         });
-     
+
+        deleteArtistBtn.addEventListener('click',function(){
+            DeleteArtist(artistId);
+            console.log(artistId);
+        });
     });  
 
     let addArtistBtn = document.getElementById('AddArtistBtn');
@@ -67,7 +61,8 @@ function SetupEventListeners(){
     addArtistBtn.addEventListener('click',function(){
         AddArtist();
     });
-    
+
+
     
 }
 
@@ -90,8 +85,7 @@ function AddArtist(){
     let saveArtistBtn = document.getElementById('saveArtistBtn');
     saveArtistBtn.addEventListener('click',function(){
 
-        
-
+    
         let artistName = document.getElementById('artistName').value;
         let artistGenre = document.getElementById('artistGenre').value;
         let artistBio = document.getElementById('artistBio').value;
@@ -112,3 +106,9 @@ function AddArtist(){
 }
  
 
+function DeleteArtist(id){
+    AllRequest.allRequest(ARTIST_CONTROLLER+id,Index,"DELETE");
+
+
+
+}
