@@ -40,5 +40,9 @@ body {
     .div3 { grid-area: 4 / 1 / 6 / 6; }
     .div4 { grid-area: 5 / 1 / 6 / 6; }
 
-    
+.albumCover{
+ max-width:300px;
+ max-height:300px;
+
+}
 

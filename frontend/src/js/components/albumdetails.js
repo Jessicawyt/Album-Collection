@@ -60,7 +60,7 @@ function Process(album){
     contentDiv.innerHTML = `
         ${album.title}
         <section class="parent">
-            <div class="div1"><img src=${album.image} /></div>
+        <div class="div1"><img class="albumCover" src=${album.image} /></div>
             <div class="div2">
                 <h2>${album.artist.name}</h3>
                 <h1>${album.title}</h1>
