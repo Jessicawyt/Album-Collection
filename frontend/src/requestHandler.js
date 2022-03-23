@@ -4,7 +4,7 @@ export default {
 
 function allRequest(location, callback, method = "GET", body=null){
     let fetchOptions = {
-        method: method,
+        method : method,
     }
 
     if (method == "PUT" || method == "POST" || body != null){
