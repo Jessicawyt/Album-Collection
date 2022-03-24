@@ -379,12 +379,60 @@ namespace template_csharp_album_collections
             modelBuilder.Entity<Song>().HasData(new Song
             {
                 Id = 3,
+                Title = "DNA",
+                AlbumId = 1
+            });
+            modelBuilder.Entity<Song>().HasData(new Song
+            {
+                Id = 4,
+                Title = "Feel",
+                AlbumId = 1
+            });
+            modelBuilder.Entity<Song>().HasData(new Song
+            {
+                Id = 5,
+                Title = "Blood",
+                AlbumId = 1
+            });
+            modelBuilder.Entity<Song>().HasData(new Song
+            {
+                Id = 6,
+                Title = "The Climb",
+                AlbumId = 2
+            });
+            modelBuilder.Entity<Song>().HasData(new Song
+            {
+                Id = 7,
+                Title = "We Can't Stop",
+                AlbumId = 2
+            });
+            modelBuilder.Entity<Song>().HasData(new Song
+            {
+                Id = 8,
+                Title = "7 Things",
+                AlbumId = 2
+            });
+            modelBuilder.Entity<Song>().HasData(new Song
+            {
+                Id = 9,
+                Title = "Start All Over",
+                AlbumId = 2
+            });
+            modelBuilder.Entity<Song>().HasData(new Song
+            {
+                Id = 5,
+                Title = "Alright",
+                AlbumId = 2
+            });
+            modelBuilder.Entity<Song>().HasData(new Song
+            {
+                Id = 6,
                 Title = "Prisoner (FEAT. DUA LIPA)",
                 AlbumId = 2
             });
             modelBuilder.Entity<Song>().HasData(new Song
             {
-                Id = 4,
+                Id = 7,
                 Title = "Angels Like You",
                 AlbumId = 2
             });
@@ -400,6 +448,7 @@ namespace template_csharp_album_collections
                 Title = "Wicked Games",
                 AlbumId = 3
             });
+            
             //Review
             modelBuilder.Entity<Review>().HasData(new Review
             {
@@ -422,6 +471,7 @@ namespace template_csharp_album_collections
                 Content = "Love him!Praying for him every night<3",
                 AlbumId = 3
             });
+
 
             base.OnModelCreating(modelBuilder);
 
