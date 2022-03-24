@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(109, 177, 109);
+    background-color: white;
 }
 
 .header{
@@ -40,5 +40,32 @@ body {
     .div3 { grid-area: 4 / 1 / 6 / 6; }
     .div4 { grid-area: 5 / 1 / 6 / 6; }
 
-    
+    .Links{
+        display: flex;
+        columns: row;
+        list-style: none;
+        text-decoration: none;
+        
+    }
 
+
+    a:link {
+        color: green;
+        background-color: transparent;
+        text-decoration: none;
+      }
+      a:visited {
+        color: grey;
+        background-color: transparent;
+        text-decoration: none;
+      }
+      a:hover {
+        color: black;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+      a:active {
+        color: yellow;
+        background-color: transparent;
+        text-decoration: underline;
+      }
