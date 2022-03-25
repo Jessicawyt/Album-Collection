@@ -12,19 +12,45 @@ export default {
 
 function SetupNavBar(){
     return `
-        <h1 class = "header">Spring 2022 C# Music</h1>
-        <ul>
-            <li id='navArtist' class = "nav1">Artist</li>
-            <li id='navAlbums' class = "nav2">Albums</li>
-        </ul>
-        
+        <div class="nav-item" id="nav-artists">
+            <div class="nav-icon-container">
+                <img class="nav-icon" src="./static/artist-icon.svg"/>
+            </div>
+            <div class="nav-icon-label">
+                Artists
+            </div>
+        </div>
+        <div class="nav-item" id="nav-albums">
+            <div class="nav-icon-container">
+                <img class="nav-icon" src="./static/album-icon.svg"/>
+            </div>
+            <div class="nav-icon-label">
+                Albums
+            </div>
+        </div>
+        <div class="nav-item" id="nav-songs">
+            <div class="nav-icon-container">
+                <img class="nav-icon" src="./static/song-icon.svg"/>
+            </div>
+            <div class="nav-icon-label">
+                Songs
+            </div>
+        </div>
+        <div class="nav-item" id="nav-artists">
+            <div class="nav-icon-container">
+                <img class="nav-icon" src="./static/review-icon.svg"/>
+            </div>
+            <div class="nav-icon-label">
+                Reviews
+            </div>
+        </div>
     `;
 }
 
 
 function SetupEventListeners(){
-    let navArtist = document.getElementById('navArtist');
-    let navAlbums = document.getElementById('navAlbums');
+    let navArtist = document.getElementById('nav-artists');
+    let navAlbums = document.getElementById('nav-albums');
     navAlbums.addEventListener('click', function(){
         albumActions.GetAlbums();    
     });
