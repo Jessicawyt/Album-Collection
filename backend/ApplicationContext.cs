@@ -71,7 +71,7 @@ namespace template_csharp_album_collections
                 Name = "Nicolás Jaar",
                 Genre = "Electronic",
                 Bio = "Nicolás Jaar is a Chilean-American composer and recording artist based in New York. Among his notable works are the albums Space Is Only Noise, Sirens, and Cenizas. He has also released two albums as one half of his band Darkside and two further albums under the alias Against All Logic.",
-                HeroImage = ""
+                HeroImage = "https://vinilogarage.cl/wp-content/uploads/2021/03/UGZV2SHRX5DLFK5V6SQ5MKHGSY.jpg"
             });
 
             //Album
@@ -134,47 +134,47 @@ namespace template_csharp_album_collections
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 8,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 2,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 9,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 2,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 10,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 2,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 11,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 2,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 12,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 2,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 13,
-                Title = "House of Balloons",
+                Title = "Album",
                 Image = "https://m.media-amazon.com/images/I/81-blrK5yoL._SL1400_.jpg",
                 ArtistId = 3,
                 RecordLabel = "XO"
@@ -182,114 +182,114 @@ namespace template_csharp_album_collections
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 14,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 3,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 15,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 3,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 16,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 3,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 17,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 3,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 18,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 3,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 19,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 4,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 20,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 4,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 21,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 4,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 22,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 4,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 23,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 4,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 24,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 4,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 25,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 5,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 26,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 5,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 27,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 5,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
@@ -297,71 +297,71 @@ namespace template_csharp_album_collections
                 Title = "Black Panther",
                 Image = "",
                 ArtistId = 5,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 29,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 5,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 30,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 5,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 31,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 6,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 32,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 6,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 33,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 6,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 34,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 6,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 35,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 6,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             modelBuilder.Entity<Album>().HasData(new Album
             {
                 Id = 36,
-                Title = "Black Panther",
+                Title = "Album",
                 Image = "",
                 ArtistId = 6,
-                RecordLabel = "Interscope"
+                RecordLabel = "RecordLabel"
             });
             //Song
             modelBuilder.Entity<Song>().HasData(new Song
@@ -420,35 +420,76 @@ namespace template_csharp_album_collections
             });
             modelBuilder.Entity<Song>().HasData(new Song
             {
-                Id = 5,
+                Id = 10,
                 Title = "Alright",
                 AlbumId = 2
             });
             modelBuilder.Entity<Song>().HasData(new Song
             {
-                Id = 6,
+                Id = 11,
                 Title = "Prisoner (FEAT. DUA LIPA)",
                 AlbumId = 2
             });
             modelBuilder.Entity<Song>().HasData(new Song
             {
-                Id = 7,
+                Id = 12,
                 Title = "Angels Like You",
                 AlbumId = 2
             });
             modelBuilder.Entity<Song>().HasData(new Song
             {
-                Id = 5,
+                Id = 13,
                 Title = "The Morning",
                 AlbumId = 3
             });
             modelBuilder.Entity<Song>().HasData(new Song
             {
-                Id = 6,
+                Id = 14,
                 Title = "Wicked Games",
                 AlbumId = 3
             });
-            
+            modelBuilder.Entity<Song>().HasData(new Song
+            {
+                Id = 16,
+                Title = "Song",
+                AlbumId = 3
+            });
+            modelBuilder.Entity<Song>().HasData(new Song
+            {
+                Id = 17,
+                Title = "Song",
+                AlbumId = 3
+            });
+            modelBuilder.Entity<Song>().HasData(new Song
+            {
+                Id = 18,
+                Title = "Song",
+                AlbumId = 3
+            });
+            modelBuilder.Entity<Song>().HasData(new Song
+            {
+                Id = 19,
+                Title = "Song",
+                AlbumId = 3
+            });
+            modelBuilder.Entity<Song>().HasData(new Song
+            {
+                Id = 20,
+                Title = "Song",
+                AlbumId = 3
+            });
+            modelBuilder.Entity<Song>().HasData(new Song
+            {
+                Id = 21,
+                Title = "Song",
+                AlbumId = 3
+            });
+            modelBuilder.Entity<Song>().HasData(new Song
+            {
+                Id = 22,
+                Title = "Song",
+                AlbumId = 3
+            });
             //Review
             modelBuilder.Entity<Review>().HasData(new Review
             {
@@ -462,17 +503,36 @@ namespace template_csharp_album_collections
                 Id = 2,
                 ReviewerName = "user05079786",
                 Content = "I really wish she could do better",
-                AlbumId = 2
+                AlbumId = 7
             });
             modelBuilder.Entity<Review>().HasData(new Review
             {
                 Id = 3,
                 ReviewerName = "TheWeekandJunkie",
                 Content = "Love him!Praying for him every night<3",
-                AlbumId = 3
+                AlbumId = 13
             });
-
-
+            modelBuilder.Entity<Review>().HasData(new Review
+            {
+                Id = 4,
+                ReviewerName = "Sammy",
+                Content = "Not my type of music",
+                AlbumId = 19
+            });
+            modelBuilder.Entity<Review>().HasData(new Review
+            {
+                Id = 25,
+                ReviewerName = "Landon",
+                Content = "Love it",
+                AlbumId = 5
+            });
+            modelBuilder.Entity<Review>().HasData(new Review
+            {
+                Id = 31,
+                ReviewerName = "user005955857",
+                Content = "Listening in my car",
+                AlbumId = 6
+            });
             base.OnModelCreating(modelBuilder);
 
             
