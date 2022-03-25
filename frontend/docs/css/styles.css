@@ -491,7 +491,7 @@ h2 {
 }
 .album-details { 
     grid-area: albumDetails;
-    padding-top: 5em;
+    padding-top: 10em;
     padding-left: 5em;
     background-color:black;
     color:white;
@@ -500,6 +500,7 @@ h2 {
 }
 .album-songs {
     grid-area: albumSongs;
+    margin-left: 5em;
 }
 
 .song-list{
@@ -612,6 +613,7 @@ cover-flow{
         background-color: transparent;
         text-decoration: none;
       }
+
       a:visited {
         color: grey;
         background-color: transparent;
