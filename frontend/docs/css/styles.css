@@ -5,6 +5,7 @@
 }
 
 body {
+
     background-color: #f8f8f8;
     color:black;
     font-family: 'Prompt', sans-serif;
@@ -16,6 +17,7 @@ body {
     grid-template-areas: 
     "nav main"
     "nav footer";
+
 }
 
 header{
@@ -397,3 +399,45 @@ h2 {
     }
   }
 
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 4 / 3; }
+    .div2 { grid-area: 1 / 3 / 4 / 6; }
+    .div3 { grid-area: 4 / 1 / 6 / 6; }
+    .div4 { grid-area: 5 / 1 / 6 / 6; }
+
+    .Links{
+        display: flex;
+        columns: row;
+        list-style: none;
+        text-decoration: none;
+        
+    }
+
+
+    a:link {
+        color: green;
+        background-color: transparent;
+        text-decoration: none;
+      }
+      a:visited {
+        color: grey;
+        background-color: transparent;
+        text-decoration: none;
+      }
+      a:hover {
+        color: black;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+      a:active {
+        color: yellow;
+        background-color: transparent;
+        text-decoration: underline;
+      }

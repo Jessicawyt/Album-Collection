@@ -59,12 +59,42 @@ function Process(album){
     console.log(album);
     contentDiv.innerHTML = `
         ${album.title}
-        <ul>
-            <li>Artist: ${album.artist.name}</li>
-            <li>Description: ${album.recordLabel}</li>
-            <li>Image: ${album.image}</li>
+        <section class="parent">
+            <div class="div1"><img src=${album.image} /></div>
+            <div class="div2">
+                <h2>${album.artist.name}</h3>
+                <h1>${album.title}</h1>
+                <h3>${album.recordLabel}</h3>
+            </div>
+            <div class="div3">
+            <ul>
+                    
+           
+                ${album.songs.map(song => {
+                    return `
+                   <li>
+                   ${song.title}
+                   </li>
+                    `
+                })}
+                </ul>
+            </div>
+            <div class="div4">
+
+            <ul>
+                ${album.reviews.map(review => {
+                    return `
+                    <li>
+                    <p>${review.content}</p>
+                   <h2> ${review.reviewerName}</h2>
+                    </li>
+
+                    `
+                })}
+                </ul>
+            </div>
             
-        </ul>
+        </section>
         <button id=${album.id} class="editButton">Edit</button>
     `;
     addEventListeners();
