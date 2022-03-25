@@ -54,48 +54,45 @@ function Edit(Album){
 }
 
 
-
+// <img class="album-image" src=${album.image} />
 function Process(album){
     console.log(album);
     contentDiv.innerHTML = `
-        ${album.title}
-        <section class="parent">
-            <div class="div1"><img src=${album.image} /></div>
-            <div class="div2">
-                <h2>${album.artist.name}</h3>
-                <h1>${album.title}</h1>
-                <h3>${album.recordLabel}</h3>
+        <div class="parent">
+            <div class="album-cover">
+                <div class="image-wrapper">
+                <img class="album-image" src=${album.image} />  
+                </div>
             </div>
-            <div class="div3">
-            <ul>
-                    
-           
-                ${album.songs.map(song => {
-                    return `
-                   <li>
-                   ${song.title}
-                   </li>
-                    `
-                })}
+            <div class="album-details">
+                <h2>${album.artist.name}</h3>
+                <h1 class="test">${album.title}</h1>
+                <h3>${album.recordLabel}</h3>
+                <button id=${album.id} class="editButton">Edit</button>
+            </div>
+            <div class="album-songs">
+                <h3>Tracks</h3>
+                <ul class="song-list">  
+                    ${album.songs.map(song => {
+                        return `
+                            <li>${song.title}</li>
+                        `
+                    })}
                 </ul>
             </div>
-            <div class="div4">
-
-            <ul>
+            <div class="album-reviews">
+                <h3>Reviews</h3>
                 ${album.reviews.map(review => {
                     return `
-                    <li>
-                    <p>${review.content}</p>
-                   <h2> ${review.reviewerName}</h2>
-                    </li>
-
-                    `
+                        <div class="review">
+                            <h2> ${review.reviewerName}</h2>
+                            <p>${review.content}</p> 
+                        </div>
+                    `;
                 })}
-                </ul>
-            </div>
-            
-        </section>
-        <button id=${album.id} class="editButton">Edit</button>
+            </div>        
+        </div>
+        
     `;
     addEventListeners();
 }

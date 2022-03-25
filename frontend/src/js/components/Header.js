@@ -13,6 +13,7 @@ export default {
 
 function SetupNavBar(){
     return `
+
         <div class="header"></div>
         
         <ul>
@@ -25,11 +26,13 @@ function SetupNavBar(){
 
 
 function SetupEventListeners(){
+
     let navArtist = document.getElementById('navArtist');
     let navAlbums = document.getElementById('navAlbums');
 
     let clickMark = undefined;
     
+
     navAlbums.addEventListener('click', function(){
         clickMark = "artist";
         albumActions.GetAlbums(); 
