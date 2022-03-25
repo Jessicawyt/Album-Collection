@@ -49,8 +49,10 @@ function CreateAlbum(){
         <input id="CreateArtistId" placeholder="Artist Id" />
         <input id="CreateImage" placeholder="ImageUrl" />
         <input id="CreaterecordLabel" placeholder="Record Label" />
+
+        <button id="CreateButton" class="CreateButton" >Add Album</button>
     </section>
-    <button id="CreateButton" class="CreateButton" >Add Album</button>
+    
     `;
     let CreateButton = document.getElementById("CreateButton");
 
