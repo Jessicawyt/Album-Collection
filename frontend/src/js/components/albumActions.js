@@ -27,25 +27,27 @@ function DeleteAlbum(id){
 
 function Process(albums){
     //console.log(albums);
-    contentDiv.innerHTML = `    
-        <cover-flow>
-            ${albums.map(album => {
-                return `
-                    <div class="album" data-cover=${album.image}>
-                        <div class="album-target" >
-                        
-                        </div>
-                        <div class="delete-control">
-                            <img src="./static/delete-icon.svg" />
-                        </div>
-                        <div class="detail-control" id=${album.id} ">
-                            <div>${album.artist.name}</div>
-                            <div>${album.title}</div>
-                        </div>
-                    </div> 
-            `;
-            }).join('')}      
-        </cover-flow>
+    contentDiv.innerHTML = `
+        <div class="flow-container">
+            <cover-flow>
+                ${albums.map(album => {
+                    return `
+                        <div class="album" data-cover=${album.image}>
+                            <div class="album-target" >
+                            
+                            </div>
+                            <div class="delete-control">
+                                <img src="./static/delete-icon.svg" />
+                            </div>
+                            <div class="detail-control" id=${album.id} ">
+                                <div>${album.artist.name}</div>
+                                <div>${album.title}</div>
+                            </div>
+                        </div> 
+                `;
+                }).join('')}      
+            </cover-flow>
+        </div>
     `;
             //<div data-cover="./static/add-icon.svg" id="create-control"></div>
 

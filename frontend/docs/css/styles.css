@@ -8,7 +8,7 @@ body {
     background-color: white;
     display:grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 25vh auto 5em;
+    grid-template-rows: 25vh 4fr 5em;
     grid-template-areas:
         "header"
         "main"
@@ -83,23 +83,60 @@ footer {
 .parent {
     width: 100%;
     display: grid;
-    grid-template-columns: 50vh auto 1fr;
+    grid-template-columns: 50vh 1fr;
     grid-template-rows: 50vh auto;
     grid-template-areas:
-        "albumCover filler albumDetails"
-        "albumSongs . albumReviews";
+        "albumCover  albumDetails"
+        "albumSongs  albumReviews";
 }
     
-.album-cover { grid-area: albumCover; }
-.filler {grid-area: filler;}
-.album-details { grid-area: albumDetails; }
-.album-songs { grid-area: albumSongs; }
-.album-reviews { grid-area: albumReviews; }
+.album-cover {
+    grid-area: albumCover;
+    background-color:black;
+}
+.album-details { 
+    grid-area: albumDetails;
+    padding-top: 5em;
+    padding-left: 5em;
+    background-color:black;
+    color:white;
+
+}
+.album-songs {
+    grid-area: albumSongs;
+}
+
+.song-list{
+    margin-top: 2em;
+    list-style-type: none;
+}
+
+.album-reviews {
+    grid-area: albumReviews;
+    margin-left: 5em;
+}
+
+.review {
+    padding-left: 5em;
+    border-bottom: 2px solid black;
+}
+
+.flow-container{
+    height: 100%;
+    background-image: linear-gradient(black,white,black);
+    background-size: 100%;
+}
+
+cover-flow{
+    height: 100%;
+    background-image: linear-gradient(black,white,black);
+    background-size: 100%;
+}
 
 .image-wrapper{
     max-width: 100%;
-    max-height:auto;
-    
+    max-height:100%;
+    overflow: hidden;
 }
 
 .album-image{
@@ -109,22 +146,15 @@ footer {
 
 }
 
-.logo{
-    width:50vh;
-    height: 5vh;
-    
-    
-}
-
 .detail-control{
-    color:white;
+    color:black;
     font-weight: bolder;
     font-size: 35pt;
     /* text-shadow: 1px 10px 5px rgba(0,0,0,1.0); */
     position:absolute;
     top:100%;
     left: 0;
-    width: 75vw;
+    width: 45vw;
     margin-left: -100%;
     height: auto;
     text-align: center;
@@ -132,6 +162,11 @@ footer {
     z-index: 2;
     transform: rotateX(45deg) translateZ(45px);
   
+}
+
+.detail-control:hover{
+    color: white;
+    -webkit-text-stroke: black 2px;
 }
 
 .delete-control{
@@ -157,12 +192,12 @@ footer {
 
     mask-image: linear-gradient(transparent,rgba(0,0,0,0.3), black);
     -webkit-mask-image: linear-gradient(transparent,rgba(0,0,0,0.3), black);
-  mask-mode: alpha;
-  webkit-mask-mode: alpha;
-  mask-repeat: no-repeat;
-  webkit-mask-repeat: no-repeat;
-  mask-size: 200px;
-  webkit-mask-size: 200px;
-  mask-position: center;
-  webkit-mask-position: center;
+    mask-mode: alpha;
+    webkit-mask-mode: alpha;
+    mask-repeat: no-repeat;
+    webkit-mask-repeat: no-repeat;
+    mask-size: 200px;
+    webkit-mask-size: 200px;
+    mask-position: center;
+    webkit-mask-position: center;
 }

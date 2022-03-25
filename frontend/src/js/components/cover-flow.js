@@ -14,24 +14,16 @@ export class CoverFlow extends HTMLElement {
         this.style.width = "100%";
         this.style.marginTop = "15vw";
         this.style.display = "block";
-        //this.zIndex = 100;
-        //this.style.display = "flex";
-        //this.style.justifyContent = "center";
-
-        //this.albums = Array.from(this.children);
-        //this.firstElementChild.style.perspective = "600px";
+        
         this.albums = Array.from(this.getElementsByClassName('album'));
         for(let i = 0; i < this.albums.length; i++){
             let album = this.albums[i];
             let albumTarget = album.getElementsByClassName("album-target")[0];
             let url = album.getAttribute("data-cover");
 
-            // albumTarget.style.minWidth = "100%";
-            // albumTarget.style.minHeight = "100%";
             album.style.backgroundImage = `url(${url})`;
             album.style.backgroundSize = "100%";
             
-            //album.setAttribute("data-id",i);
             albumTarget.setAttribute("data-id",i);
             albumTarget.style.position = "absolute";
             albumTarget.style.top = 0;
@@ -44,8 +36,8 @@ export class CoverFlow extends HTMLElement {
             album.style.position = "absolute";
             album.style.top = "50%";
             album.style.left = "50%";
-            album.style.width = "25vw";
-            album.style.height = "25vw";
+            album.style.width = "15vw";
+            album.style.height = "15vw";
             album.style.marginLeft = "-90px";
             album.style.marginTop = "-90px";
             
@@ -106,7 +98,7 @@ export class CoverFlow extends HTMLElement {
 
                 deleteControl.style.display = "none";
 
-                detailControl.style.color = "rgba(255,255,255,0)";
+                detailControl.style.color = "rgba(0,0,0,0)";
                 detailControl.style.textShadow = "0 0 0 transparent";
                 detailControl.style["-webkit-test-stroke-width"] = "0px";
                 detailControl.style["-webkit-test-stroke-color"] = "transparent";
@@ -116,7 +108,7 @@ export class CoverFlow extends HTMLElement {
                 album.style.zIndex = this.maxZIndex;  
                 deleteControl.style.display = "initial";
 
-                detailControl.style.color = "rgba(255,255,255,1)";
+                detailControl.style.color = "rgba(0,0,0,1)";
                 detailControl.style.textShadow = "1px 20px 5px black";
                 detailControl.style["-webkit-test-stroke-width"] = "2px";
                 detailControl.style["-webkit-test-stroke-color"] = "black";
@@ -126,7 +118,7 @@ export class CoverFlow extends HTMLElement {
                 album.style.zIndex = this.baseZIndex + ( this.albums.length - i  );
                 deleteControl.style.display = "none";
 
-                detailControl.style.color = "rgba(255,255,255,0)";
+                detailControl.style.color = "rgba(0,0,0,0)";
                 detailControl.style.textShadow = "0 0 0 transparent";
                 detailControl.style["-webkit-test-stroke-width"] = "0px";
                 detailControl.style["-webkit-test-stroke-color"] = "transparent";

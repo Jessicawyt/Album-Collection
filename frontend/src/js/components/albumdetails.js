@@ -54,47 +54,45 @@ function Edit(Album){
 }
 
 
-
+// <img class="album-image" src=${album.image} />
 function Process(album){
     console.log(album);
     contentDiv.innerHTML = `
         <div class="parent">
             <div class="album-cover">
                 <div class="image-wrapper">
-                    <img class="album-image" src=${album.image} />
+                <img class="album-image" src=${album.image} />  
                 </div>
             </div>
-            <div class="filler"></div>
             <div class="album-details">
                 <h2>${album.artist.name}</h3>
                 <h1 class="test">${album.title}</h1>
                 <h3>${album.recordLabel}</h3>
+                <button id=${album.id} class="editButton">Edit</button>
             </div>
             <div class="album-songs">
-            <ul>
-                ${album.songs.map(song => {
-                    return `
-                        <li>
-                        ${song.title}
-                        </li>
-                    `
-                })}
+                <h3>Tracks</h3>
+                <ul class="song-list">  
+                    ${album.songs.map(song => {
+                        return `
+                            <li>${song.title}</li>
+                        `
+                    })}
                 </ul>
             </div>
             <div class="album-reviews">
-            <ul>
+                <h3>Reviews</h3>
                 ${album.reviews.map(review => {
                     return `
-                        <li>
-                        <p>${review.content}</p>
-                        <h2> ${review.reviewerName}</h2>
-                        </li>
-                    `
+                        <div class="review">
+                            <h2> ${review.reviewerName}</h2>
+                            <p>${review.content}</p> 
+                        </div>
+                    `;
                 })}
-                </ul>
             </div>        
         </div>
-        <button id=${album.id} class="editButton">Edit</button>
+        
     `;
     addEventListeners();
 }
