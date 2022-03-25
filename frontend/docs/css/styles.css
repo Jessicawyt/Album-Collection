@@ -1,12 +1,14 @@
 /*albumstyle*/
 
-html, body{
+*{
     padding:0;
     margin: 0;
-    border: 0;
+    box-sizing: border-box;
 }
 
-body {
+
+
+/* body {
     background-color: white;
     display:grid;
     grid-template-columns: 1fr;
@@ -16,9 +18,9 @@ body {
         "main"
         "footer";
         
-}
+} */
 
-header{
+/* header{
     background-color: red;
     color: rgb(255, 255, 255);
     margin: 0;
@@ -31,32 +33,32 @@ header{
 
 .title-section{
     grid-area: title;
-}
+} */
 
 /* NAV */
 
-.nav-section{
+/* .nav-section{
     grid-area: nav;
 }
 
-#navbar{
+#navbar{ */
     /* flex:1; */
-    display:flex;
+    /* display:flex;
     flex-direction: row;
     
 }
 
-.nav-item{
+.nav-item{ */
     /* flex:1; */
-    width: 50%;
+    /* width: 50%;
     height: 50%;
 }
 
 .nav-icon-container{
-    padding: 1em 1em 0em 1em;
+    padding: 1em 1em 0em 1em; */
     /* border: 1px solid white; */
     
-}
+/* }
 
 .nav-icon{
     width: 100%;
@@ -64,31 +66,18 @@ header{
     object-fit: cover;
 }
 
-.nav-icon-label{
+.nav-icon-label{ */
     /* border: 1px solid white; */
-    padding:0;
+    /* padding:0;
     margin: 0;
     text-align: center;
     height: 1em;
-}
+} */
 
-/* MAIN CONTENT */
-
-main {
-    grid-area: main;
-}
-
-footer {
-    grid-area:footer;
   
 /*End of AlbumStyle*/
   
   
-* {
-    box-sizing: border-box;
-    margin:0;
-    padding:0;
-}
 
 body {
 
