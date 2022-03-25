@@ -1,5 +1,6 @@
 import { GetArtists } from "./ArtistIndex";
-import albumActions from "./albumActions"
+import albumActions from "./albumActions";
+import Footer from "./Footer";
 
 
 
@@ -18,7 +19,7 @@ function SetupNavBar(){
         
         <ul>
             <li id='navArtist'>Artist</li>
-            <li id='navAlbums'>Albums</li>
+            <li id='navAlbums'>Contributers</li>
         </ul>
         
     `;
@@ -35,7 +36,7 @@ function SetupEventListeners(){
 
     navAlbums.addEventListener('click', function(){
         clickMark = "artist";
-        albumActions.GetAlbums(); 
+        contentDiv.innerHTML = Footer.SetupFooter(); 
         if (clickMark != "album") {
             navAlbums.style.borderBottom = "2px solid black"; 
             navAlbums.style.width = "max-content";

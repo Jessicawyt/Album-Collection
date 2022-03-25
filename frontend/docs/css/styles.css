@@ -80,11 +80,11 @@
   
 
 body {
-
+    position:relative;
     background-color: #f8f8f8;
     color:black;
     font-family: 'Prompt', sans-serif;
-    height:100vh;
+    /* height:100vh; */
     width:100vw;
     display:grid;
     grid-template-columns: 16% 84%;
@@ -100,9 +100,14 @@ header{
     display:flex;
     justify-content: center;
     align-items: center;
-    padding-top:6vh;
+    /* padding-top:6vh; */
     border-right:.8px solid #cdcdcd;
     min-width: 120px;
+    position:absolute;
+    /* padding-top:2rem; */
+    height:100vh;
+    top:0;
+    bottom:0;
 }
 
 #navbar {
