@@ -1,7 +1,7 @@
 import { GetArtists } from "./ArtistIndex";
 import albumActions from "./albumActions";
 import Footer from "./Footer";
-
+import {GetAlbums} from "./AlbumIndex"
 
 
 const contentDiv = document.getElementById("app");

@@ -4,6 +4,7 @@ import { ALBUM_CONTROLLER } from "../constants";
 
 export default{
     GetAlbum,
+    
 }
 
 function GetAlbum(id){
@@ -76,9 +77,8 @@ function Process(album){
                     ${album.songs.map(song => {
                         return `
                             <li>${song.title}</li>
-                            `
-                           
-                    }).join('')} 
+                        `
+                    })}
                 </ul>
             </div>
             <div class="album-reviews">

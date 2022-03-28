@@ -1,6 +1,7 @@
 import AllRequest from "../../requestHandler";
 import { ARTIST_CONTROLLER } from "../constants";
 import { appDiv } from "../constants";
+import Album from "./albumdetails";
 
 export default{
     GetArtist
@@ -39,7 +40,7 @@ function Process(artist){
                                 <div>
                                     <img src="${album.image}">
                                 </div> 
-                                <p>${album.title}</p>
+                                <p id="${album.id}" class="singleAlbum">${album.title}</p>
                             </div> 
                         `
                     }).join('')}
@@ -48,9 +49,27 @@ function Process(artist){
         </div> 
     `;
     AddEventListeners(artist);
+    AddEventListenerForTitle();
 }
 
+function AddEventListenerForTitle(){
+    let albumList = document.getElementsByClassName("singleAlbum");
+    console.log(albumList);
+  
+        
+    Array.from(albumList).forEach(a =>{
+        console.log(a);
 
+        a.addEventListener('click',function(){
+            console.log("title click");
+            Album.GetAlbum(a.id);
+        });
+    });
+
+      
+
+   
+}
 
 function AddEventListeners(artist){
     let updateArtistBtn = document.getElementById('updateArtistBtn');
