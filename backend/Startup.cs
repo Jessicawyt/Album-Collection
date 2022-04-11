@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace template_csharp_album_collections
 {
@@ -25,8 +26,30 @@ namespace template_csharp_album_collections
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
+            services.AddControllers().AddNewtonsoftJson(o =>
+            {
+                o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
 
-            services.AddControllers();
+            //just creating these swagger calls for just in case
+            //I did not download the nuget packages
+            //services.AddSwaggerGen(c =>
+            //{
+            //  c.SwaggerDoc("v1", new OpenApiInfo { Title = "TodosData", Version = "v1" });
+            //});
+
+            services.AddDbContext<ApplicationDbContext>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", services =>
+                {
+                    services.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,11 +58,15 @@ namespace template_csharp_album_collections
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                //app.UseSwagger();
+                //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TodosData v1"));
             }
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("AllowAll");
 
             app.UseAuthorization();
 
