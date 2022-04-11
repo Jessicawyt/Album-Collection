@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using template_csharp_album_collections;
 
 namespace template_csharp_album_collections.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220325141549_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -363,7 +365,7 @@ namespace template_csharp_album_collections.Migrations
                             Id = 1,
                             Bio = "Kendrick Lamar is an American rapper and lyricist. He is a critically and commercially acclaimed artist who started his musical journey as a teenager. He began his career in music by recording mix tapes under the pseudonym K-Dot. His first musical contract was signed at the age of sixteen with record label Top Dawg Entertainment.",
                             Genre = "Rap",
-                            HeroImage = "https://www.alux.com/wp-content/uploads/2017/08/Kendrick-Lamar-Net-Worth-e1501790264974.jpg",
+                            HeroImage = "/images/kendrick.jpg",
                             Name = "Kendrick Lamar"
                         },
                         new

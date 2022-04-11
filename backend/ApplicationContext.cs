@@ -31,7 +31,7 @@ namespace template_csharp_album_collections
                 Name = "Kendrick Lamar",
                 Genre = "Rap",
                 Bio = "Kendrick Lamar is an American rapper and lyricist. He is a critically and commercially acclaimed artist who started his musical journey as a teenager. He began his career in music by recording mix tapes under the pseudonym K-Dot. His first musical contract was signed at the age of sixteen with record label Top Dawg Entertainment.",
-                HeroImage = "/images/kendrick.jpg"
+                HeroImage = "https://www.alux.com/wp-content/uploads/2017/08/Kendrick-Lamar-Net-Worth-e1501790264974.jpg"
             });
             modelBuilder.Entity<Artist>().HasData(new Artist
             {
